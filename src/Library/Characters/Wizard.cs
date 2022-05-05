@@ -1,6 +1,6 @@
 namespace RoleplayGame
 {
-    public class Wizard
+    public class Wizard : ICharacter
     {
         private int health = 100;
 
@@ -11,9 +11,9 @@ namespace RoleplayGame
 
         public string Name { get; set; }
 
-        public SpellsBook SpellsBook { get; set; }
+        public IElement SpellsBook { get; set; }
 
-        public Staff Staff { get; set; }
+        public IElement Staff { get; set; }
 
         public int AttackValue
         {
