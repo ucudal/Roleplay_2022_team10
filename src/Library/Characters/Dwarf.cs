@@ -1,6 +1,6 @@
 namespace RoleplayGame
 {
-    public class Dwarf
+    public class Dwarf : ICharacter
     {
         private int health = 100;
 
@@ -11,11 +11,11 @@ namespace RoleplayGame
 
         public string Name { get; set; }
 
-        public Axe Axe { get; set; }
+        public IElement Axe { get; set; }
 
-        public Shield Shield { get; set; }
+        public IElement Shield { get; set; }
 
-        public Helmet Helmet { get; set; }
+        public IElement Helmet { get; set; }
 
         public int AttackValue
         {
