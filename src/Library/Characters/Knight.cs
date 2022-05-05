@@ -1,6 +1,6 @@
 namespace RoleplayGame
 {
-    public class Knight
+    public class Knight : ICharacter
     {
         private int health = 100;
 
@@ -11,11 +11,11 @@ namespace RoleplayGame
 
         public string Name { get; set; }
 
-        public Sword Sword { get; set; }
+        public IElement Sword { get; set; }
 
-        public Shield Shield { get; set; }
+        public IElement Shield { get; set; }
 
-        public Armor Armor { get; set; }
+        public IElement Armor { get; set; }
 
         public int AttackValue
         {
