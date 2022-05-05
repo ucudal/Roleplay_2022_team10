@@ -1,13 +1,10 @@
 namespace RoleplayGame
 {
-    public class Helmet
+    public class Helmet : IDefense
     {
-        public int DefenseValue
-        {
-            get
+        public int DefenseValue()
             {
                 return 18;
             }
-        }
     }
 }
