@@ -8,7 +8,7 @@ namespace RoleplayGame
 
         string Name { get; }
 
-        //public List <IElement> elements = new List<IElement>(); no me deja :( public class triste
+        List <IElement> Elements { get; }
         public int AttackValue ();
 
         public int DefenseValue ();

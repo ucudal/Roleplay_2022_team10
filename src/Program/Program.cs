@@ -11,7 +11,7 @@ namespace Program
             book.Spells = new Spell[]{ new Spell() };
 
             Wizard gandalf = new Wizard("Gandalf");
-            gandalf.Staff = new Staff();
+            //gandalf.Staff = new Staff();
             gandalf.SpellsBook = book;
 
             Dwarf gimli = new Dwarf("Gimli");

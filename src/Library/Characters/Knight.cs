@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 namespace RoleplayGame
 {
     public class Knight : ICharacter
@@ -8,6 +9,9 @@ namespace RoleplayGame
         {
             this.Name = name;
         }
+        public List <IElement> elements = new List<IElement>();
+        public List <IElement> Elements { get {return this.elements;} }
+
 
         public string Name { get; set; }
 

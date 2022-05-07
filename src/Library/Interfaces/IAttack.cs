@@ -1,6 +1,6 @@
 namespace RoleplayGame
 {
-    public interface IAttack : IElement
+    public interface IAttack 
     {
         public int AttackValue();
         
