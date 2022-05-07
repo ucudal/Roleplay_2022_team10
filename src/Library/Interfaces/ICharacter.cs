@@ -18,6 +18,8 @@ namespace RoleplayGame
         public void ReceiveAttack(int power) {}
 
         public void Cure() {}
+        public void addElement(IElement element) {}
+        public void removeElement(IElement element) {}
 
         
 
