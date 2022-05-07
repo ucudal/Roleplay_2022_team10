@@ -11,26 +11,20 @@ namespace RoleplayGame
 
         public string Name { get; set; }
 
-        public IElement Sword { get; set; }
+        public IAttack Sword { get; set; }
 
-        public IElement Shield { get; set; }
+        public IDefense Shield { get; set; }
 
-        public IElement Armor { get; set; }
+        public IDefense Armor { get; set; }
 
-        public int AttackValue
+        public int AttackValue()
         {
-            get
-            {
-                return Sword.AttackValue();
-            }
+            return Sword.AttackValue();      
         }
 
-        public int DefenseValue
+        public int DefenseValue()
         {
-            get
-            {
-                return Armor.DefenseValue() + Shield.DefenseValue();
-            }
+            return Armor.DefenseValue() + Shield.DefenseValue();
         }
 
         public int Health
@@ -47,9 +41,9 @@ namespace RoleplayGame
 
         public void ReceiveAttack(int power)
         {
-            if (this.DefenseValue < power)
+            if (this.DefenseValue() < power)
             {
-                this.Health -= power - this.DefenseValue;
+                this.Health -= power - this.DefenseValue();
             }
         }
 

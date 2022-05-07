@@ -11,24 +11,18 @@ namespace RoleplayGame
 
         public string Name { get; set; }
 
-        public IElement SpellsBook { get; set; }
+        public SpellsBook  SpellsBook { get; set; }
 
-        public IElement Staff { get; set; }
+        public Staff Staff { get; set; }
 
-        public int AttackValue
+        public int AttackValue()
         {
-            get
-            {
-                return SpellsBook.AttackValue() + Staff.AttackValue();
-            }
+            return SpellsBook.AttackValue() + Staff.AttackValue(); 
         }
 
-        public int DefenseValue
+        public int DefenseValue()
         {
-            get
-            {
-                return SpellsBook.DefenseValue() + Staff.DefenseValue();
-            }
+            return SpellsBook.DefenseValue() + Staff.DefenseValue();
         }
 
         public int Health
@@ -45,9 +39,9 @@ namespace RoleplayGame
 
         public void ReceiveAttack(int power)
         {
-            if (this.DefenseValue < power)
+            if (this.DefenseValue() < power)
             {
-                this.Health -= power - this.DefenseValue;
+                this.Health -= power - this.DefenseValue();
             }
         }
 
