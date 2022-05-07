@@ -1,10 +1,8 @@
 namespace RoleplayGame
 {
-    public class Spell : IAttack, IDefense
+    public class Spell : IElement
     {
         public int AttackValue()
-
-
         {
             return 70;
         }
