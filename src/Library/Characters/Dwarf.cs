@@ -16,21 +16,39 @@ namespace RoleplayGame
 
         public string Name { get; set; }
 
-        public IAttack Axe { get; set; }
-
-        public IDefense Shield { get; set; }
-
-        public IDefense Helmet { get; set; }
 
         public int AttackValue()
         {
-            return Axe.AttackValue();
+            int Attack = 0;
+            foreach (var item in Elements)
+            {
+                Attack += item.AttackValue();
+            }
+            return Attack;   
         }
 
         public int DefenseValue()
         {
-            return Shield.DefenseValue() + Helmet.DefenseValue();
+            
+            int Defense = 0;
+            foreach (var item in Elements)
+            {
+                Defense += item.DefenseValue();
+            }
+            return Defense;   
+            
         }
+
+        public void addElement(IElement element)
+        {
+            Elements.Add(element);
+        }
+
+        public void removeElement(IElement element)
+        {
+            Elements.Remove(element);
+        }
+
 
         public int Health
         {
