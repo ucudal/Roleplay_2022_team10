@@ -1,7 +1,9 @@
+using System.Collections.Generic;
+
 namespace RoleplayGame
 {
-    public interface IElement
+    public interface IElement : IAttack, IDefense
     {
-
+    
     }
 }

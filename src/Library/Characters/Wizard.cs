@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace RoleplayGame
 {
     public class Wizard : ICharacter
@@ -8,12 +10,15 @@ namespace RoleplayGame
         {
             this.Name = name;
         }
+        public List <IElement> elements = new List<IElement>();
+        public List <IElement> Elements { get {return this.elements;} }
+
 
         public string Name { get; set; }
 
-        public SpellsBook  SpellsBook { get; set; }
+        public IElement  SpellsBook { get; set; }
 
-        public Staff Staff { get; set; }
+        public IElement Staff { get; set; }
 
         public int AttackValue()
         {

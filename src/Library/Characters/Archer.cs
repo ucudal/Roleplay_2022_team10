@@ -1,8 +1,12 @@
+using System.Collections.Generic;
 namespace RoleplayGame
 {
     public class Archer : ICharacter
     {
         private int health = 100;
+
+        public List <IElement> elements = new List<IElement>();
+        public List <IElement> Elements { get {return this.elements;} }
 
         public Archer(string name)
         {
