@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace RoleplayGame
 {
     public class Wizard : ICharacter
@@ -8,27 +10,24 @@ namespace RoleplayGame
         {
             this.Name = name;
         }
+        public List <IElement> elements = new List<IElement>();
+        public List <IElement> Elements { get {return this.elements;} }
+
 
         public string Name { get; set; }
 
-        public IElement SpellsBook { get; set; }
+        public IElement  SpellsBook { get; set; }
 
         public IElement Staff { get; set; }
 
-        public int AttackValue
+        public int AttackValue()
         {
-            get
-            {
-                return SpellsBook.AttackValue() + Staff.AttackValue();
-            }
+            return SpellsBook.AttackValue() + Staff.AttackValue(); 
         }
 
-        public int DefenseValue
+        public int DefenseValue()
         {
-            get
-            {
-                return SpellsBook.DefenseValue() + Staff.DefenseValue();
-            }
+            return SpellsBook.DefenseValue() + Staff.DefenseValue();
         }
 
         public int Health
@@ -45,9 +44,9 @@ namespace RoleplayGame
 
         public void ReceiveAttack(int power)
         {
-            if (this.DefenseValue < power)
+            if (this.DefenseValue() < power)
             {
-                this.Health -= power - this.DefenseValue;
+                this.Health -= power - this.DefenseValue();
             }
         }
 

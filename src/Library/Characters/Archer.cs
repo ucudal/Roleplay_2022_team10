@@ -1,8 +1,12 @@
+using System.Collections.Generic;
 namespace RoleplayGame
 {
     public class Archer : ICharacter, IAttack, IDefense
     {
         private int health = 100;
+
+        public List <IElement> elements = new List<IElement>();
+        public List <IElement> Elements { get {return this.elements;} }
 
         public Archer(string name)
         {
@@ -11,24 +15,21 @@ namespace RoleplayGame
 
         public string Name { get; set; }
         
-        public IElement Bow { get; set; }
+        public IAttack Bow { get; set; }
 
-        public IElement Helmet { get; set; }
+        public IDefense Helmet { get; set; }
 
-        public int AttackValue
+        public int AttackValue()
         {
-            get
-            {
-                return Bow.AttackValue();
-            }
+            return Bow.AttackValue();
+            
         }
 
-        public int DefenseValue
+        public int DefenseValue()
         {
-            get
-            {
-                return Helmet.DefenseValue();
-            }
+            
+            return Helmet.DefenseValue();
+            
         }
 
         public int Health
@@ -45,9 +46,9 @@ namespace RoleplayGame
 
         public void ReceiveAttack(int power)
         {
-            if (this.DefenseValue < power)
+            if (this.DefenseValue() < power)
             {
-                this.Health -= power - this.DefenseValue;
+                this.Health -= power - this.DefenseValue();
             }
         }
 

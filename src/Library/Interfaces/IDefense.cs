@@ -1,6 +1,6 @@
 namespace RoleplayGame
 {
-    public interface IDefense : IElement
+    public interface IDefense 
     {
         public int DefenseValue();
         

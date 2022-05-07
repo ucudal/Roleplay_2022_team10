@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 namespace RoleplayGame
 {
     public class Dwarf : ICharacter
@@ -9,28 +10,26 @@ namespace RoleplayGame
             this.Name = name;
         }
 
+        public List <IElement> elements = new List<IElement>();
+        public List <IElement> Elements { get {return this.elements;} }
+
+
         public string Name { get; set; }
 
-        public IElement Axe { get; set; }
+        public IAttack Axe { get; set; }
 
-        public IElement Shield { get; set; }
+        public IDefense Shield { get; set; }
 
-        public IElement Helmet { get; set; }
+        public IDefense Helmet { get; set; }
 
-        public int AttackValue
+        public int AttackValue()
         {
-            get
-            {
-                return Axe.AttackValue();
-            }
+            return Axe.AttackValue();
         }
 
-        public int DefenseValue
+        public int DefenseValue()
         {
-            get
-            {
-                return Shield.DefenseValue() + Helmet.DefenseValue();
-            }
+            return Shield.DefenseValue() + Helmet.DefenseValue();
         }
 
         public int Health
@@ -47,9 +46,9 @@ namespace RoleplayGame
 
         public void ReceiveAttack(int power)
         {
-            if (this.DefenseValue < power)
+            if (this.DefenseValue() < power)
             {
-                this.Health -= power - this.DefenseValue;
+                this.Health -= power - this.DefenseValue();
             }
         }
 
