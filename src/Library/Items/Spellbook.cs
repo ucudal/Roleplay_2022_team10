@@ -40,6 +40,11 @@ namespace RoleplayGame
         {
             spells.Add(spell);
         }
+
+        public void removeSpellToBook(Spell spell)
+        {
+            spells.Remove(spell);
+        }
     }
 }
 
