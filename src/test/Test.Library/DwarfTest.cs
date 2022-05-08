@@ -40,10 +40,12 @@ namespace Test.Library
             Archer archer = new Archer("archer");
             Bow bow = new Bow();
             archer.addElement(bow);
+            Sword sword = new Sword();
+            archer.addElement(sword);
 
             gruñon.ReceiveAttack(archer.AttackValue());
 
-            Assert.AreEqual(15, gruñon.Health);
+            Assert.AreEqual(82, gruñon.Health);
         }
 
         [Test]
