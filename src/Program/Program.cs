@@ -8,18 +8,22 @@ namespace Program
         static void Main(string[] args)
         {
             SpellsBook book = new SpellsBook();
-            book.Spells = new Spell[]{ new Spell() };
-
+            Spell spell = new Spell();
+            book.addSpellToBook(spell);
             Wizard gandalf = new Wizard("Gandalf");
-            //gandalf.Staff = new Staff();
-            gandalf.SpellsBook = book;
+            Staff Staff = new Staff();
+            gandalf.addElement(Staff);
+            SpellsBook SpellsBook = new SpellsBook();
+            gandalf.addElement(SpellsBook);
 
             Dwarf gimli = new Dwarf("Gimli");
-            gimli.Axe = new Axe();
-            gimli.Helmet = new Helmet();
+            Axe axe = new Axe();
+            Helmet helmet = new Helmet();
+            gimli.addElement(axe);
+            gimli.addElement(helmet);
 
             Console.WriteLine($"Gimli has ❤️ {gimli.Health}");
-            Console.WriteLine($"Gandalf attacks Gimli with ⚔️ {gandalf.AttackValue}");
+            Console.WriteLine($"Gandalf attacks Gimli with ⚔️ {gandalf.AttackValue()}");
 
             gimli.ReceiveAttack(gandalf.AttackValue());
 

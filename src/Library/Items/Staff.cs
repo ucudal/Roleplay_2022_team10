@@ -1,6 +1,6 @@
 namespace RoleplayGame
 {
-    public class Staff : IAttack, IDefense
+    public class Staff : IElement
     {
         public int AttackValue()
 
