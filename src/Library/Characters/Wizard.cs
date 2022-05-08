@@ -16,7 +16,6 @@ namespace RoleplayGame
 
         public string Name { get; set; }
 
-        public IElement  SpellsBook { get; set; }
 
 
         public int AttackValue()
