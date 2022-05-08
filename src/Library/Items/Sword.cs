@@ -4,7 +4,7 @@ namespace RoleplayGame
     {
         public int AttackValue()
         {
-            return 20;
+            return 30;
         }
 
         public int DefenseValue()
